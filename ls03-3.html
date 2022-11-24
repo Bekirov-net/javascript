@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Товары в корзине хранятся в массиве. Задачи:
+a. Организовать такой массив для хранения товаров в корзине;
+b. Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+-->
+<script>
+  "use strict";
+
+  let bascket = [
+    { product: "Яблоки", amount: 2, price: 10 },
+    { product: "Груши", amount: 1.2, price: 17},
+    { product: "Покет", amount: 1, price: 2 }
+  ];
+  
+  let check = 0;
+  function countBasketPrice() {
+    let total=0;
+    for (let i = 0; i < bascket.length; i++) {
+    total = bascket[i].amount * bascket[i].price
+    check = total + check;
+  }
+  console.log(`В корзине товаров на сумму: ${check} рубля`);
+			
+}
+countBasketPrice();
+</script>
+</body>
+</html>
