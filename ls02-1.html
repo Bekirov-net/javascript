@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Угадай число». Браузер будет загадывать случайное четырехзначное
+число, а мы будем отгадывать.
+Попытки отгадать число будут идти через диалоговое окно — prompt. Браузер будет сообщать в
+ответ, больше или меньше загаданного наш ответ.
+Алгоритм будет таким:
+1. Браузер генерирует число и приглашает пользователя к игре.
+2. Выводится окно запроса предположения.
+3. Браузер проверяет число и возвращает результат.
+4. Повторяем до тех пор, пока число не будет угадано.
+5. Как только число угадано, браузер сбрасывает число попыток и генерирует новое число
+-->
+<script>
+  "use strict";
+
+  var enigma = {};
+  
+  function generatNumber () {
+      const x = Math.floor(Math.random() * 1000);
+      enigma.y = x
+      }
+    
+  function tryNumber() {
+    const userNumber = +prompt("Отгадайте число (от 1 до 1000):");
+    if (enigma.y < userNumber) {
+      alert(`Ваше число ${userNumber} больше загаданного`);
+      tryNumber();
+      } else if (enigma.y > userNumber) {
+        alert(`Ваше число ${userNumber} меньше загаданного`);
+        tryNumber();
+       } else (enigma.y === userNumber) 
+        alert(`Вы выйграли! Попробуйем еще!`);
+       startGame();
+       
+    };
+    
+    function startGame() {
+    generatNumber();
+    tryNumber();
+    }
+    
+    startGame();
+          
+</script>
+</body>
+</html>
